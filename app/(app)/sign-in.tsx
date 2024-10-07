@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { Text, View } from "react-native";
-import { Link, Stack } from 'expo-router';
+import { Link, Stack, router } from 'expo-router';
 import CustomInput from '@/components/input';
 import CustomButton from '@/components/button';
+import { useSession } from "@/lib/ctx";
 
 
 export default function LoginScreen() {
+    const { signIn } = useSession();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleLogin = () => {
-        alert("Login");
+        signIn({ email, password });
+        router.replace('/')
     }
 
     return (

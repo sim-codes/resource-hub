@@ -1,8 +1,10 @@
 import {Alert, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import CustomButton from '@/components/button';
+import { useSession } from '@/lib/ctx';
 
 export default function ProfileScreen() {
+  const { signOut } = useSession();
 
   function handleLogout() {
     Alert.alert(
@@ -14,7 +16,7 @@ export default function ProfileScreen() {
           onPress: () => console.log("Cancel Pressed"),
           style: "cancel"
         },
-        { text: "Yes", onPress: () => console.log("OK Pressed") }
+        { text: "Yes", onPress: () => signOut() }
       ]
     );
   }

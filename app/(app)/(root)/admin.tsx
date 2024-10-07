@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import {Text, View, Pressable } from 'react-native';
+import {Text, View, Pressable, Platform } from 'react-native';
 import Pagination from '@/components/pagination';
 import CustomButton from '@/components/button';
+
 
 export default function AdminScreen() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,20 +20,30 @@ export default function AdminScreen() {
       <View className='w-full flex-row justify-between bg-gray-200 border p-1 border-gray-400 rounded-lg'>
         <Pressable
         onPress={() => setActiveTab('department')}
-        className={`p-2 w-1/3  rounded-lg text-lg ${activeTab === 'department' ? 'bg-black text-white':''}`}>
+        className={`p-2 w-1/3  rounded-lg ${activeTab === 'department' ? 'bg-[#007DFE]':''}`}>
           <Text
-          className={`w-full ${activeTab === 'department' ? 'bg-black text-white':''}`}
+          className={`text-md font-medium text-center ${activeTab === 'department' ? 'text-white':''}
+            ${Platform.OS === 'ios' ? 'text-md':'text-lg'}
+            `}
           >Department</Text>
         </Pressable>
         <Pressable
         onPress={() => setActiveTab('course')}
-        className={`p-2 w-1/3  rounded-lg text-lg ${activeTab === 'course' ? 'bg-black text-white':''}`}>
-          <Text>Course</Text>
+        className={`p-2 w-1/3  rounded-lg ${activeTab === 'course' ? 'bg-[#007DFE]':''}`}>
+          <Text
+          className={`font-medium text-center ${activeTab === 'course' ? 'text-white':''}
+            ${Platform.OS === 'ios' ? 'text-md':'text-lg'}
+            `}
+          >Course</Text>
         </Pressable>
         <Pressable
         onPress={() => setActiveTab('upload')}
-        className={`p-2 w-1/3  rounded-lg text-lg ${activeTab === 'upload' ? 'bg-black text-white':''}`}>
-          <Text>Upload</Text>
+        className={`p-2 w-1/3  rounded-lg ${activeTab === 'upload' ? 'bg-[#007DFE]':''}
+           ${Platform.OS === 'ios' ? 'text-md':'text-lg'}
+        `}>
+          <Text
+          className={`text-md font-medium text-center ${activeTab === 'upload' ? 'text-white':''}`}
+          >Upload</Text>
         </Pressable>
       </View>
 
