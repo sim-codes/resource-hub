@@ -97,7 +97,7 @@ export default function RegisterScreen() {
             size="large"
         />
 
-        <Text className={"text-center mt-5 text-lg text-[#667085]"}>Already have an account? <Link href="/login" className={"text-[#2C27F5]"}>Log In</Link></Text>
+        <Text className={"text-center mt-5 text-lg text-[#667085]"}>Already have an account? <Link href="/sign-in" className={"text-[#2C27F5]"}>Log In</Link></Text>
     </View>
     );
 }

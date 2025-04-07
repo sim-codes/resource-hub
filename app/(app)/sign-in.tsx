@@ -39,7 +39,7 @@ export default function LoginScreen() {
                 />
             </View>
 
-            <Link href="/(auth)/login" className={"text-[#2C27F5] text-right -mt-3 mb-10 font-medium text-lg"}>Forgot Password?</Link>
+            <Link href="/sign-in" className={"text-[#2C27F5] text-right -mt-3 mb-10 font-medium text-lg"}>Forgot Password?</Link>
 
             <CustomButton
                 title="Login"

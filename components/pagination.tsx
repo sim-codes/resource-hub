@@ -54,7 +54,7 @@ const Pagination: React.FC<PaginationProps> = ({
   );
 
   return (
-    <View className="flex-row items-center justify-center my-4">
+    <View className="flex-row items-center justify-center my-5">
       {renderPageButton(
         currentPage > 1 ? currentPage - 1 : '...',
         <Ionicons name="chevron-back" size={20} color={currentPage === 1 ? '#9CA3AF' : '#007DFE'} />

@@ -1,10 +1,27 @@
-import {Alert, Text, View, Image, TouchableOpacity } from 'react-native';
+import {Alert, Text, View, Image, TouchableOpacity, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import CustomButton from '@/components/button';
 import { useSession } from '@/lib/ctx';
+import { useState } from 'react';
+import * as ImagePicker from "expo-image-picker";
 
 export default function ProfileScreen() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const { signOut } = useSession();
+
+  const pickImageAsync = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      // mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setSelectedImage(result.assets[0].uri);
+    } else {
+      alert('You did not select an image.');
+    }
+  }
 
   function handleLogout() {
     Alert.alert(
@@ -22,7 +39,7 @@ export default function ProfileScreen() {
   }
 
   return (
-    <View className={"mt-10 mx-2 p-3 flex-1"}>
+    <View className={"p-3 flex-1 bg-white"}>
       <Text className="font-medium text-4xl my-2">Your Profile</Text>
 
       <View className='items-center'>
@@ -31,9 +48,11 @@ export default function ProfileScreen() {
             source={require('@/assets/images/samuel.jpg')}
             className='w-full h-full rounded-full'
           />
-          <View className='w-8 h-8 bg-[#007DFE] rounded-full absolute bottom-0 right-0 items-center justify-center'>
+          <Pressable
+          onPress={ ()=> {}}
+          className='w-8 h-8 bg-[#007DFE] rounded-full absolute bottom-0 right-0 items-center justify-center'>
             <Ionicons name="pencil" size={16} color="white" />
-          </View>
+          </Pressable>
         </View>
         <Text className="text-4xl my-2">Segun Michael</Text>
       </View>

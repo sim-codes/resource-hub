@@ -7,6 +7,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { SessionProvider } from "@/lib/ctx";
+import { ResponsiveProvider } from '@/hooks/ResponsiveContext';
 import Constants from 'expo-constants';
 
 NativeWindStyleSheet.setOutput({
@@ -34,7 +35,9 @@ export default function RootLayout() {
   return (
     <SessionProvider>
       <SafeAreaView style={{marginTop: statusBarHeight, flex: 1}}>
-        <Slot />
+        <ResponsiveProvider>
+          <Slot />
+        </ResponsiveProvider>
       </SafeAreaView>
     </SessionProvider>
   );

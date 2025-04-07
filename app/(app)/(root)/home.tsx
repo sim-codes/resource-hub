@@ -37,13 +37,13 @@ const categories = [
 export default function HomeScreen() {
   return (
     <ScrollView className='bg-white flex-1'>
-      <View className={"p-3 flex-1"}>
+      <View className={"p-3"}>
         <Hero isHome={true} firstname="Michael" subtitle="Start your learning journey" />
-        <Text className="font-medium text-4xl my-2">Recommended</Text>
+        <Text className="text-4xl my-2">Recommended</Text>
 
         <ResourceCard item={resources[0]} />
 
-        <Text className="font-medium text-4xl my-2">Recently Updated</Text>
+        <Text className="text-4xl my-2">Recently Updated</Text>
 
         <View>
         <FlatList
@@ -58,7 +58,7 @@ export default function HomeScreen() {
         </View>
 
         <View className='flex flex-row justify-between my-2'>
-          <Text className="font-medium text-4xl my-1">Categories</Text>
+          <Text className="text-4xl my-1">Categories</Text>
           <Text className='text-yellow-500 font-medium text-xl'>See all</Text>
         </View>
 

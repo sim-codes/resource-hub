@@ -33,8 +33,8 @@ const Hero: React.FC<HeroProps> = ({
                     className="w-[90%] flex flex-row items-center justify-between px-3 py-2 bg-white rounded-lg my-5"
                 >
                     <TextInput
-                        className="flex-1 text-md p-1 focus-visible:outline-none focus-visible:ring-0 focus-visible:border-none" placeholder="Search" />
-                    <Ionicons name="search" size={20} color="#2C27F5" />
+                        className="flex-1 text-lg p-1 focus-visible:outline-none focus-visible:ring-0 focus-visible:border-none" placeholder="Search" />
+                    <Ionicons name="search" size={20} color="#007DFE" />
                 </View>
 
                 <Link href={'/modal'} className="w-full border-2 border-white px-3 py-2 ml-2 rounded-l-full">

@@ -63,7 +63,7 @@ export default function UploadScreen() {
   };
 
   return (
-    <View className="mt-10 mx-2 p-3 flex-1">
+    <View className="p-3 flex-1 bg-white">
       <Text className="font-bold text-xl">Media Upload</Text>
       <Text>Add your documents here, or upload resources</Text>
 
